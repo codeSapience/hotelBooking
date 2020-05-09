@@ -72,35 +72,3 @@ class CoordinateSerializer(serializers.Serializer):
                                  label="Longitude point (LONG)")
 
 
-# class PlaceSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Place
-#         fields = "__all__"
-
-#     def create(self, validated_data):
-#         the_place = Place(
-#             title = validated_data.get('title', ""),
-#             address = validated_data.get("address", ""),
-#             lat = float(validated_data["lat"]),
-#             lon = float(validated_data["lon"]),
-#         )
-
-#         the_place.save()
-#         return the_place
-
-# class HotelSerializer(serializers.ModelSerializer):
-#     location = PlaceSerializer(many=False)
-#     class Meta:
-#         model = Hotel
-#         fields = "__all__"
-
-#     def create(self, validated_data):
-#         hotel = Hotel(
-#             name = validated_data.get("name", ""),
-#             location = self.location.instance,
-#             rating = self.validate_data.get("rating", ""),
-#             price = self.validate_data.get("rating", ""),
-#         )
-
-#         hotel.save()
-#         return hotel

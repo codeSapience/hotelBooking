@@ -1,7 +1,6 @@
 from django.conf.urls import url
 from django.urls import path
 from rest_framework_swagger.views import get_swagger_view
-# from rest_framework.urlpatterns import format_suffix_patterns
 from .apiviews import getNearbyPlaces, MakeBooking, getBookings, UserLogin, UserSignup, logoutUser
 
 app_name = 'bookHotel'
@@ -20,4 +19,3 @@ urlpatterns = [
     path('docs/', schema_view),
 ]
 
-# urlpatterns = format_suffix_patterns(urlpatterns)
