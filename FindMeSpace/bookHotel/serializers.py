@@ -52,15 +52,24 @@ class BookingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Booking
         fields = "__all__"
-        extra_kwargs = {"place_id": {"write_only": True}}
+        # extra_kwargs = {"place_id": {"write_only": True}}
 
     def create(self, validated_data):
         new_booking = Booking(user=self.user.instance,
                               place_id=self.validated_data["place_id"],
-                              place_title=self.validated_data["place_title"])
+                              place_title=self.validated_data.get("place_title", ""))
 
         new_booking.save()
         return new_booking
+
+
+class CoordinateSerializer(serializers.Serializer):
+    lat = serializers.FloatField(required=True,
+                                 allow_null=False,
+                                 label="Latitude point (LAT)")
+    lon = serializers.FloatField(required=True,
+                                 allow_null=False,
+                                 label="Longitude point (LONG)")
 
 
 # class PlaceSerializer(serializers.ModelSerializer):
