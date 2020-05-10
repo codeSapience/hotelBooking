@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles%}
+{% load static %}
+
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Akintade Britto">
+    <meta name="description" content="Static homepage view for FindMeSpace backend">
+
+    <title>Home | FindMeSpace</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-sm navbar-primary">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#"><img src="{% static 'bookHotel/images/limehome-logo.svg'%}" alt="Logo"></a>
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="/docs/">DRF API docs</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/api/docs">Swagger API docs</a>
+    </li>
+
+    <!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Endpoints
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="/api/properties?">api/properties</a>
+        <a class="dropdown-item" href="api/bookings">api/bookings (req Auth)</a>
+        <a class="dropdown-item" href="api/properties/here:pds:place:XXXXXXX-YYYYYYYY/bookings">api/properties/PROPERTY_ID/bookings</a>
+      </div>
+    </li>
+  </ul>
+</nav>
+<br>
+
+  <section id="about" style="margin-bottom: 10%">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Hotel Booking APIs!</h2>
+          <p class="lead">Your most reliable REST API Backend:</p>
+          <ul>
+            <li>Kindly refer to DRF/Swagger API docs in Menu to see details about each available API Endpoint</li>
+            <li>Authentication is token-based. A token is generated for user when logged in at 'api/login'</li>
+            <li>To create a new user, signup with email and password params at '/api/signup'</li>
+            <li>Logout a signed-in user at '/api/logout'</li>
+            <li>For more details about API, see <a href="https://github.com/codeSapience/hotelBooking" target="_">this github-repo</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="jumbotron text-center bg-dark" style="padding-bottom: 150px; margin-top: 20px">
+    <p class="text-center text-white">Made with Love ❤ by <a href="https://github.com/codeSapeince/">codeSapience</a>, &copy; 2020</p>
+  </div>
+  
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

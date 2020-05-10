@@ -19,6 +19,7 @@ from rest_framework.documentation import include_docs_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('bookHotel.urls')),
     path('docs/', include_docs_urls(title="HotelBooking API")),
+    path('', include('bookHotel.urls')),
+    path('api/', include('bookHotel.urls')),
 ]

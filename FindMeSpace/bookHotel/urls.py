@@ -2,6 +2,7 @@ from django.conf.urls import url
 from django.urls import path
 from rest_framework_swagger.views import get_swagger_view
 from .apiviews import getNearbyPlaces, MakeBooking, getBookings, UserLogin, UserSignup, logoutUser
+from .views import homepage
 
 app_name = 'bookHotel'
 
@@ -17,5 +18,6 @@ urlpatterns = [
     path("login", UserLogin.as_view(), name="user_login"),
     path("logout", logoutUser, name="user_logout"),
     path('docs/', schema_view),
+    path('', homepage, name="homepage"),
 ]
 
